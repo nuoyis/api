@@ -1,0 +1,148 @@
+*{
+	margin:0;
+	padding:0;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+    background-color: #f9f9fd;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: #e1e1e1;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #66CCFF;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: pink;
+}
+
+::-webkit-scrollbar-thumb:active {
+    background-color: red;
+}
+
+::-webkit-scrollbar-button {
+    display: none;
+}
+
+html,body{
+	width:100%;
+	height:100%;
+	background-color: white;
+}
+
+header{
+	position: relative;
+	z-index: 20;
+	width:100%;
+	height:30%;
+	background-image: url(../img/background.jpg);
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.25);
+}
+
+.nuoyis-header-text{
+    text-align: center;
+	height: 80%;
+	margin: 0 auto;
+	padding-top: 3.5%;
+}
+
+.nuoyis-header-text-1{
+	font-size: 2.5rem;
+	font-weight: bold;
+}
+
+.nuoyis-header-text-2{
+	font-size: 1rem;
+}
+
+.nuoyis-header-text-1,.nuoyis-header-text-2{
+	color: black;
+}
+
+.nuoyis-api-ad,.nuoyis-api-main{
+	width: 80%;
+	overflow: hidden;
+    margin: 0 auto;
+    margin-top: 30px;
+	margin-bottom: calc(10vw);
+}
+
+.nuoyis-api {
+    display: grid;
+	padding: 0px 8%;
+	color: #66CCFF;
+	grid-gap: 30px;
+	padding-bottom: 3rem;
+	text-decoration: none;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.nuoyis-api-url {
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: none;
+	text-align: center;
+	padding-top: 30px;
+	padding-bottom: 30px;
+    background-color:#f2f2f2;
+    box-shadow: 4px 6px 16px gray;
+    transition: transform 0.5s,background 0.5s;
+}
+
+.nuoyis-api-url i {
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: #303ef7;
+}
+
+.nuoyis-api-url h2 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.nuoyis-api-url:hover {
+    background: #303ef7;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+.nuoyis-api-url:hover i {
+    color: #fff;
+}
+
+.nuoyis-api-text{
+    color: black;
+    padding: 0 5px;
+}
+
+.nuoyis-api-text p{
+    margin:0;
+    font-size: 10px;
+}
+
+footer{
+	bottom: 0;
+	height: 30px;
+	padding: 10px 10px 10px 10px;
+	text-align: center;
+	background-color: black;
+	color: white;
+}
+
+footer a{
+	text-decoration: none;
+	color:white;
+}

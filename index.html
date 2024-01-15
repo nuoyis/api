@@ -1,0 +1,134 @@
+<!--
+                            _ooOoo_
+                           o8888888o
+                           88" . "88
+                           (| -_- |)
+                           O\  =  /O
+                        ____/`---'\____
+                      .'  \\|     |//  `.
+                     /  \\|||  :  |||//  \
+                    /  _||||| -:- |||||-  \
+                    |   | \\\  -  /// |   |
+                    | \_|  ''\---/''  |   |
+                    \  .-\__  `-`  ___/-. /
+                  ___`. .'  /--.--\  `. . __
+               ."" '<  `.___\_<|>_/___.'  >'"".
+              | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+              \  \ `-.   \_ __\ /__ _/   .-` /  /
+         ======`-.____`-.___\_____/___.-`____.-'======
+                            `=---='
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               佛祖保佑        永无BUG        永不宕机
+
+诺依阁闲暇日制作 保留设计的著作权
+如果有侵权的图片或者css,发送邮件至wkkjonlykang@vip.qq.com
+如果有人侵权或扒本站，请发送邮件至wkkjonlykang@vip.qq.com
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="keywords" content="诺依阁,诺依阁的API">
+		<meta name="description" content="诺依阁提供闪电免费调用的API">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+		<!-- IE 8浏览器 -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+		<!-- 默认使用极速内核 -->
+		<meta name="renderer" content="webkit">
+		<!--Chrome Android 地址栏颜色-->
+		<meta name="theme-color" content="#66CCFF"/>
+		<!-- 开启HTML DNS缓存 -->
+		<meta http-equiv="x-dns-prefetch-control" content="on">
+		<link rel="dns-prefetch" href="//static.nuoyis.net" />
+		<link rel="dns-prefetch" href="//io.nuoyis.net" />
+		<link rel="dns-prefetch" href="//api.nuoyis.net" />
+		<title>诺依阁的API</title>
+		<!-- 网站头像 -->
+		<link rel="icon" href="https://www.nuoyis.net/favicon.ico">
+		<!-- CSS集合 -->
+		<link rel="stylesheet" href="css/index.css" />
+		<!-- JS集合(头部) -->
+		<script src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/3.6.0/jquery.min.js" type="application/javascript"></script>
+		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4015694772463475" crossorigin="anonymous"></script>
+	</head>
+	<!-- 网页头部 -->
+	<header>
+		<div class="nuoyis-header-text">
+			<div class="nuoyis-header-text-1">诺依阁网站旗下API调用平台</div>
+			<div class="nuoyis-header-text-2">专注于稳定 | 安全 | 高速率运行</div>
+		</div>
+	</header>
+	<!-- 网页主体 -->
+	<body>
+		<div class="nuoyis-api-ad">
+			<p>广告是本站的唯一支柱，请各位理性对待哦</p>
+			 <ins class="adsbygoogle"
+			 style="display:block"
+			 data-ad-client="ca-pub-4015694772463475"
+			 data-ad-slot="8371555862"
+			 data-ad-format="auto"
+			 data-full-width-responsive="true"><hr></ins>
+		</div>
+		<div class="nuoyis-api-main">
+			<div class="nuoyis-api" id="nuoyis-api">
+				<p id="nuoyis-js-status">哇，Javascript正在加载</p>		
+			</div>
+		</div>
+	</body>
+	<!-- 网页页脚 -->
+	<footer>
+		备案号:<a href="//beian.miit.gov.cn" data-pjax-state="">鄂ICP备2023004941号-2</a> | <img style="vertical-align:middle" src="./img/beian.png" data-ll-status="loading" class="entered loading">鄂公网安备<a href="//www.beian.gov.cn/portal/registerSystemInfo?recordcode=42011702000728" data-pjax-state="">42011702000728</a>号|© 2020 - 至今<a href="https://xuvce.com" target="_blank" style="color:#999;">雨晨风蓝</a>&amp;<a href="https://www.nuoyis.com" target="_blank" style="color:#999;"> 诺依阁</a>
+	</footer>
+	<script>
+	(adsbygoogle = window.adsbygoogle || []).push({});
+	</script>
+	<script>
+	var status,list = nuoajax("https://server-api.nuoyis.net/jiekou.json","GET","json");
+	var nuoweb = '';
+	if (status == 0){
+	document.getElementById ("nuoyis-js-status").style.display = "none";
+	for (i=0;i<list.length;i++) {
+	k = i + 1;
+	nuoweb += `
+	<a class="nuoyis-api-url" href="./search.html?id=${k}">
+		<i class="nuoyis-api-images"></i>
+		<div class="nuoyis-api-text">
+			<h2>${list[i].name}</h2>
+			<p>
+				说明:无
+				<br />
+				状态:${list[i].state}
+			</p>
+		</div>
+	</a>
+	`
+	}
+	document.getElementById("nuoyis-api").innerHTML = nuoweb;
+	}else if (list.length == 0){
+	document.getElementById("nuoyis-js-status").innerHTML = "API为空，请站长添加后再试吧";
+	}else{
+	document.getElementById("nuoyis-js-status").innerHTML = "加载失败惹，请刷新页面";
+	}
+	
+	function nuoajax(load,type,datatype){
+	var status = 0;
+	var wdata = "";
+	$.ajax({
+	 async:false,
+	 url: load,
+	 type: type,
+	 dataType: datatype,
+	 success: 
+	 function (data) {
+	    status = 1;
+	    wdata= data;
+	 },
+	 error:
+	 function(xhr,state,errorThrown){
+		status = 0;
+	 }
+	});
+	return status,wdata;
+	}
+	</script>
+</html>
